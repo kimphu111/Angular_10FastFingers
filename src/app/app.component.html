@@ -1,0 +1,73 @@
+<div id="allProject">
+
+  <div>
+    <h1>10 Fast Fingers!!!</h1>
+  </div>
+
+  <div id="function_top">
+
+    <div class="word-appear">
+      <!-- <h3  *ngIf="!startGame" id="word">chữ cần gõ: </h3> -->
+      <h2 id="word">{{randomWord}} </h2>
+
+    </div>
+
+    <div id="press_word">
+      <input type="text" [(ngModel)]="input" placeholder="vui lòng nhập vào:">
+      <h1>Thời gian:{{totalTime}}</h1>
+
+      <div class="bu">
+      <button (click)="startGame()">Start game</button>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <h2 *ngIf="totalTime <= 0">Điểm của bạn là: {{point}}</h2>
+
+
+  <div id="keyboard">
+    <div id="top">
+      <button *ngFor="let letter of buttons[0].top" [ngClass]="{'active': letter === activeKey}">{{letter}}</button>
+    </div>
+    <div id="mid">
+      <button *ngFor="let letter of buttons[1].mid" [ngClass]="{'active': letter === activeKey}">{{letter}}</button>
+    </div>
+    <div id="bottom">
+      <button *ngFor="let letter of buttons[2].bot" [ngClass]="{'active': letter === activeKey}">{{letter}}</button>
+    </div>
+  </div>
+
+
+  <!-- <div id="container">
+    @for (row of buttons; track $index) {@if($index == 0){
+    <div id="top">
+      @for(letter of row.top; track $index){
+      <button>{{letter}}</button>
+      }
+    </div>
+    } @else if ($index == 1) {
+    <div id="mid">
+      @for(letter of row.mid; track $index){
+      <button>{{letter}}</button>
+      }
+    </div>
+    } @else {
+    <div id="bottom">
+      @for(letter of row.bot; track $index){
+      <button>{{letter}}</button>
+      }
+    </div>
+    }
+    }
+  </div> -->
+
+
+
+
+
+
+
+</div>
